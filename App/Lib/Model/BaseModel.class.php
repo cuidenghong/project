@@ -21,6 +21,7 @@ class BaseModel extends Model {
 	}
 	
 	public function update($data = array()){
+        $data['udate'] = time();
 		if($this->create($data)){
 			$affectedrows = $this->save();
 			if($affectedrows === false){

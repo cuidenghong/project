@@ -38,6 +38,41 @@ class ReplyMsgAction extends BaseAction
      */
     public function insert()
     {
-        var_dump($_POST);
+        $ReplyMsg = D("ReplyMsg");
+        $data = $this->_post();
+        try
+        {
+            $ReplyMsg->insert($data);
+            $this->success("添加成功");
+        }
+        catch(Exception $ex)
+        {
+            $this->error($ex->getMessage());
+        }
+    }
+
+    /**
+     * @param $id
+     */
+    public function edit($messageid)
+    {
+        $ReplyMsg = D("ReplyMsg");
+        $data = $ReplyMsg->getInfo($id);
+        $this->assign("data", $data);
+        $this->display("add");
+    }
+
+    public function update(){
+        $ReplyMsg = D("ReplyMsg");
+        $data = $this->_post();
+        try
+        {
+            $ReplyMsg->update($data);
+            $this->success("编辑成功");
+        }
+        catch(Exception $ex)
+        {
+            $this->error($ex->getMessage());
+        }
     }
 }

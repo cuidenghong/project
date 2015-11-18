@@ -22,9 +22,10 @@
 <block name="pageContent">
 	<div class="panelBar">
 		<ul class="toolBar">
-            <li><a class="add" href="__URL__/add" target="navTab" title="添加模型"><span>添加</span></a></li>
+            <li><a class="add" href="__URL__/add" target="navTab" title="添加"><span>添加</span></a></li>
+            <li><a class="edit" href="__URL__/edit/messageid/{messageid}" target="navTab" rel="Message-view" title="编辑"><span>编辑</span></a></li>
 			<li><a class="delete" href="__URL__/delete" target="selectedTodo" rel="messageid[]" title="确定要删除吗?"><span>删除</span></a></li>
-			<li><a class="preview" href="__URL__/view/messageid/{messageid}" target="navTab" rel="Message-view" title="查看留言"><span>查看</span></a></li>
+
 		</ul>
 	</div>
 
@@ -40,9 +41,9 @@
 		</thead>
 		<tbody>
     	<volist name="datas" id="vo">
-			<tr target="messageid" rel="{$vo.messageid}">
-      	<td><label><input name="messageid[]" value="{$vo.messageid}" type="checkbox"> {$vo.messageid}</label></td>
-				<volist name=":data('order','list')" id="field">
+			<tr target="messageid" rel="{$vo.id}">
+      	<td><label><input name="messageid[]" value="{$vo.id}" type="checkbox"> {$vo.id}</label></td>
+				<volist name=":data('ReplyMsg','list')" id="field">
 				<td>
 					<eq name="field" value="file">
 					<a href="__URL__/file/messageid/{$vo.messageid}">{$vo[$field][name]}</a>
@@ -51,8 +52,7 @@
 					</eq>
 				</td>
 				</volist>
-				<td>{$vo.clientip|default="--"}</td>
-				<td>{$vo.createtime|date='Y-m-d H:i:s',###}</td>
+				<td>{$vo.cdate|date='Y-m-d H:i:s',###}</td>
 			</tr>
 			</volist>
 		</tbody>
