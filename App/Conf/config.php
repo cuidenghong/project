@@ -34,7 +34,7 @@ return array(
 	'TMPL_STRIP_SPACE'         => false,
 	'TMPL_PARSE_STRING'        => array(
 		'__STATIC__'           => __ROOT__.'/static',
-		'__PAGE__TITLE__'      => '碧岩环保管理系统'
+		'__PAGE__TITLE__'      => '信息管理系统'
 	),
 	
 	//标签配置

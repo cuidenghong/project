@@ -1,0 +1,40 @@
+<extend name="./base_form" />
+
+<block name="title">文本信息</block>
+
+<block name="content">
+    <style type="text/css">
+        table.itemDetail th, table.itemDetail td {
+            line-height: 21px;
+            padding: 5px;
+            vertical-align:top;
+        }
+        .pageFormContent label.action {
+            width: auto;
+            padding: 0;
+            margin: 0 10px 0 0;
+            vertical-align: middle;
+        }
+        .pageFormContent .fieldArea .button,.pageFormContent .fieldArea .rowNum {
+            margin-left: 5px;
+        }
+    </style>
+    <notempty name="data.id">
+        <input type="hidden" name="id" value="{$data.id}"/>
+    </notempty>
+    <div class="pageFormContent nowrap" layoutH="97">
+        <p><strong>基本信息</strong></p>
+        <dl>
+            <dt>关键字：</dt>
+            <dd>
+                <input type="text" name="keywords" value="{$data.keywords}" size="30" class="required"/>
+            </dd>
+        </dl>
+        <dl>
+            <dt>回复内容：</dt>
+            <dd>
+                <textarea name="reply_msg" class="textInput wh500 required" rows="5">{$data.description}</textarea>
+            </dd>
+        </dl>
+    </div>
+</block>

@@ -1,0 +1,31 @@
+<extend name="./base_form" />
+
+<block name="title">查看留言</block>
+
+<block name='action'>__URL__/reply</block>
+
+<block name="content">
+  <input type="hidden" name="messageid" value="{$data.messageid}"/>
+  <div class="pageFormContent nowrap" layoutH="97">
+    <dl>
+      <dt>提交时间：</dt>
+      <dd>{$data.createtime|date="Y-m-d H:i:s",###}</dd>
+    </dl>
+    <dl>
+      <dt>客户IP地址：</dt>
+      <dd>{$data.clientip}</dd>
+    </dl>
+  	<volist name=":data('order','field')" id="vo">
+    <dl>
+      <dt>{$vo.name}：</dt>
+      <dd>
+      	<eq name="key" value="file">
+				<a href="__URL__/file/messageid/{$data.messageid}">{$data[$key][name]}</a>
+				<else/>
+				{$data[$key]}
+				</eq>
+      </dd>
+    </dl>
+    </volist>
+  </div>
+</block>
