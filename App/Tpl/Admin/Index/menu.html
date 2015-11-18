@@ -1,0 +1,57 @@
+<php>
+	function buildColumnMenuHtml($columns){
+		foreach($columns as $column){
+			$html .= '<li>';
+			if(!empty($column["table"])){
+				$html .= '<a href="__GROUP__/'.data("table", "type", $column["table"]["type"], "module").'/index/columnid/'.$column["columnid"].'" target="navTab" rel="Data-'.$column["columnid"].'">';
+			}else{
+				$html .= '<a>';
+			}
+			$html	.= $column["name"];
+			$html	.= '</a>';
+			if(!empty($column["child"])){
+					$html .= '<ul>';
+					$html .= buildColumnMenuHtml($column["child"]);
+					$html .= '</ul>';
+			}
+			$html .= '</li>';
+		}
+		return $html;
+	}
+</php>
+
+<div class="accordion" fillSpace="sidebar">
+  <div class="accordionHeader">
+    <h2><span>Folder</span>信息管理</h2>
+  </div>
+  <div class="accordionContent">
+    <ul class="tree treeFolder">
+      {:buildColumnMenuHtml(D("Column")->getTree())}
+    </ul>
+  </div>
+  <!-- end accordionContent -->
+  <div class="accordionHeader">
+    <h2><span>Folder</span>其他管理</h2>
+  </div>
+  <div class="accordionContent">
+    <ul class="tree treeFolder">
+      <li><a href="__GROUP__/Message" target="navTab" rel="Message">在线加盟</a></li>
+        <li><a href="__GROUP__/Order" target="navTab" rel="Order">在线订购</a></li>
+    </ul>
+  </div>
+  <!-- end accordionContent -->
+  <div class="accordionHeader">
+    <h2><span>Folder</span>系统管理</h2>
+  </div>
+  <div class="accordionContent">
+    <ul class="tree treeFolder">
+      <li><a href="__GROUP__/Admin" target="navTab" rel="Admin">用户管理</a></li>
+      <eq name="loginUser.adminid" value="0">
+      <li><a href="__GROUP__/Table" target="navTab" rel="Table">模型管理</a></li>
+      </eq>
+      <li><a href="__GROUP__/Column" target="navTab" rel="Column">栏目管理</a></li>
+      <li><a href="__GROUP__/Runtime" target="navTab" rel="Runtime">系统缓存</a></li>
+    </ul>
+  </div>
+  <!-- end accordionContent -->
+</div>

@@ -1,0 +1,39 @@
+<extend name="./base" />
+
+<block name="title">{:W("ColumnTitle")}_</block>
+
+<block name="main">
+    <div class="banner"></div>
+
+    <div class="wrapper cp_1">
+        <span>招商加盟</span>
+        <ul>
+            <column:siblings id="vo" column=":I('columnid')">
+                <li <?php if (I('columnid') == $vo[columnid] ){?> class="active"<?php }?>><column:link column="vo.columnid">{$vo.name}</column:link></li>
+            </column:siblings>
+            <li><a href="__APP__/Message">在线加盟</a></li>
+        </ul></div>
+
+    <div class="index_con">
+        <div class="wrapper" >
+            <div class="pro_lb"><div class="pro_list">
+                <span>
+                    <i>您所在的位置：</i>
+                      {:W("ColumnCrumbs")}
+                </span>
+            </div>
+
+                <div class="about_main">
+                    <img src="__STATIC__/home/images/about_1.jpg" width="434" height="50" />
+                    <br /><br />
+                    {$data.content|requestFilterDecode}
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+
+</block>
+

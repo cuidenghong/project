@@ -1,0 +1,43 @@
+<style type="text/css">
+	.pageFormField dl dd {
+		width: 85%;
+	}
+</style>
+<empty name="data.dataid">
+<input type="hidden" name="columnid" value="{$Think.get.columnid}"/>
+<else/>
+<input type="hidden" name="dataid" value="{$data.dataid}"/>
+<input type="hidden" name="columnid" value="{$data.columnid}"/>
+</empty>
+<volist name="table.field" id="field">
+<dl>
+  <dt>{$field.title}：</dt>
+  <dd class="{$field.element}">
+  <switch name="field.element">
+  <case value="textarea">
+		<include file="Content:textarea" />
+  </case>
+  <case value="date">
+  	<include file="Content:date" />
+  </case>
+  <case value="datetime">
+  	<include file="Content:datetime" />
+  </case>
+  <case value="file">
+  	<include file="Content:file" />
+  </case>
+  <case value="image">
+		<include file="Content:image" />
+  </case>
+  <case value="imagegroup">
+  	<include file="Content:imagegroup" />
+  </case>
+  <case value="editor">
+  	<include file="Content:editor" />
+  </case>
+  <default />
+  	<include file="Content:text" />
+  </switch>
+  </dd>
+</dl>
+</volist>

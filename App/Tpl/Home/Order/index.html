@@ -1,0 +1,86 @@
+<extend name="./base" />
+
+<block name="title">{:W("ColumnTitle")}_</block>
+
+<block name="main">
+    <div class="banner"></div>
+
+    <div class="wrapper cp_1">
+        <span>在线订购</span>
+        <ul>
+            <li  class="active"><a href="__APP__/Message">在线订购</a></li>
+        </ul></div>
+
+    <div class="index_con">
+        <div class="wrapper" >
+            <div class="pro_lb"><div class="pro_list">
+                <span>
+                    <i>您所在的位置：</i>
+                      {:W("ColumnCrumbs")} > 在线订购
+                </span>
+            </div>
+                <form method="post" name="message" id="message" action="__APP__/Order/insert">
+                <div class="dg"><h2>产品在线订购</h2>
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0" >
+                        <tbody>
+                        <tr>
+                            <td align="center"><strong>产品名称：</strong></td>
+                            <td><input type="text" name="name" id="name"><span class="red">*</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center"><strong>产品型号：</strong></td>
+                            <td><input type="text" name="model" id="model"><span class="red">*</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center"><strong>订购数量：</strong></td>
+                            <td><input type="text" name="number" id="number"> </td>
+                        </tr>
+                        <tr>
+
+                            <td align="center"><strong>联系人：</strong></td>
+                            <td><input type="text" name="username" id="username"> <span class="red">*</span></td>
+                        </tr>
+
+                        <tr>
+                            <td align="center"><strong>联系电话：</strong></td>
+                            <td><input type="text" name="phone" id="phone"> <span class="red">*</span></td>
+                        </tr>
+                        <tr>
+                            <td align="center"><strong>QQ：</strong></td>
+                            <td><input type="text" name="qq" id="qq"></td>
+                        </tr>
+                        <tr>
+                            <td align="center"><strong>电子邮箱：</strong></td>
+                            <td><input type="text" name="email" id="email"></td>
+                        </tr>
+                        <tr>
+                            <td align="center"><strong>收货地址：</strong></td>
+                            <td><input type="text" name="address" id="address"></td>
+                        </tr>
+                        <tr>
+                            <td align="center" ><strong>其他说明：</strong></td>
+                            <td><textarea name="content" id="content"></textarea><span class="red">*</span></td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="2" align="center">
+                                <input type="submit" name="button" id="button" value="保存" class="btn1">&nbsp;&nbsp;&nbsp;
+                                 <input type="reset" name="button" id="button" value="充值" class="btn1"><br />
+                            </td>
+                        </tr>
+                        </tbody></table>
+
+                </div>
+                </form>
+
+
+            </div>
+
+
+        </div>
+    </div>
+
+</block>
+

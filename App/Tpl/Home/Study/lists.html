@@ -1,0 +1,47 @@
+<extend name="./base" />
+
+<block name="title">{:W("DataTitle")}_</block>
+
+<block name="main">
+
+    <div class="banner"></div>
+    <div class="wrapper cp_1">
+        <span>竹炭研究</span><ul>
+        <column:siblings id="vo" column=":I('columnid')">
+            <li <?php if (I('columnid') == $vo[columnid] ){?> class="active"<?php }?>><column:link column="vo.columnid">{$vo.name}</column:link></li>
+        </column:siblings>
+
+        </ul></div>
+
+    <div class="index_con">
+        <div class="wrapper" >
+            <div class="pro_lb">
+
+            <div class="pro_list">
+                <span><i>您所在的位置：</i>{:W("ColumnCrumbs")}</span>
+            </div>
+                <ul>
+                    <data:list id="v" column=":I('columnid')" recommend="1" order='headline DESC' limit="1">
+                    <div class="new_left"><data:link data="v"><img src="{$v.pic.savepath}" ></data:link></div>
+                    <div class="new_right">
+                        <b >{$v.title|msubstr=###,0,20}</b>
+                        <div>日期：{:W("FormatDate", $v)}</div><br />
+                        <data:link data="v">{$v.intro|msubstr=###,0,120}<br /><span class="gw_more">查看更多</span></data:link>
+                    </div>
+                    <div class="clear"></div>
+                    </data:list>
+                    <volist name=":array_chunk($datas,10)" id="chunk">
+                        <volist name="chunk" id="vo">
+                            <li><a href="{:W('DataLink', $vo)}">{$vo.title|msubstr=###,0,30}</a><span>{:W("FormatDate", $vo)}</span></li>
+                        </volist>
+                    </volist>
+                </ul>
+
+            <div class="clear"></div>
+            <div class="page">{$page->show()}</div>
+        </div>
+            </div>
+    </div>
+
+
+</block>

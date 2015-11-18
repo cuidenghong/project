@@ -1,0 +1,140 @@
+@charset "utf-8";
+
+/* extend */
+.wh5 {width: 5px;}
+.wh10 {width: 10px;}
+.wh15 {width: 15px;}
+.wh20 {width: 20px;}
+.wh50 {width: 50px;}
+.wh100 {width: 100px;}
+.wh150 {width: 150px;}
+.wh200 {width: 200px;}
+.wh300 {width: 300px;}
+.wh400 {width: 400px;}
+.wh500 {width: 500px;}
+.whaotu {width: auto;}
+
+.ml5 {margin-left: 5px;}
+.ml10 {margin-left: 10px;}
+.ml15 {margin-left: 15px;}
+.ml20 {margin-left: 20px;}
+
+.mr5 {margin-right: 5px;}
+.mr10 {margin-right: 10px;}
+.mr15 {margin-right: 15px;}
+.mr20 {margin-right: 20px;}
+
+.p5 {padding: 5px;}
+.p10 {padding: 10px;}
+.p15 {padding: 15px;}
+.p20 {padding: 20px;}
+
+.pl5 {padding-left: 5px;}
+.pl10 {padding-left: 10px;}
+.pl15 {padding-left: 15px;}
+.pl20 {padding-left: 20px;}
+
+.pr5 {padding-right: 5px;}
+.pr10 {padding-right: 10px;}
+.pr15 {padding-right: 15px;}
+.pr20 {padding-right: 20px;}
+
+.btnUp {
+	background: url(../default/images/button/up.png) no-repeat;
+	display:block;
+	width: 22px;
+	height: 20px;
+	text-indent: -1000px;
+	overflow: hidden;
+	float: left;
+	margin-right: 3px;
+}
+.btnDown {
+	background: url(../default/images/button/down.png) no-repeat;
+	display:block;
+	width: 22px;
+	height: 20px;
+	text-indent: -1000px;
+	overflow: hidden;
+	float: left;
+	margin-right: 3px;
+}
+.btnUp:hover, .btnDown:hover {text-decoration: none;}
+
+#header .nav li.first {
+	background: none;
+}
+
+.pageFormContent input, .pageFormContent textarea, .pageFormContent select {
+	margin-left: 0;
+	vertical-align: middle;
+	border: 1px solid #D4D4D4;
+}
+
+.pageFormContent fieldHtml {
+	display: none;
+}
+
+.pageContent input, .pageContent textarea, .pageContent select {
+	vertical-align: middle;
+}
+
+
+.panelBar .toolBar a.add span {
+	background: url(../default/images/grid/add.png) left no-repeat;
+}
+.panelBar .toolBar a.edit span {
+	background: url(../default/images/grid/edit.png) left no-repeat;
+}
+.panelBar .toolBar a.delete span {
+	background: url(../default/images/grid/delete.png) left no-repeat;
+}
+.panelBar .toolBar a.preview span {
+	background: url(../default/images/grid/preview.png) left no-repeat;
+}
+.panelBar .toolBar a.lock span {
+	background: url(../default/images/grid/lock.png) left no-repeat;
+}
+.panelBar .toolBar a.canclelock span {
+	background: url(../default/images/grid/canclelock.png) left no-repeat;
+}
+.panelBar .toolBar a.recommend span {
+	background: url(../default/images/grid/recommend.png) left no-repeat;
+}
+.panelBar .toolBar a.canclerecommend span {
+	background: url(../default/images/grid/canclerecommend.png) left no-repeat;
+}
+.panelBar .toolBar a.headline span {
+	background: url(../default/images/grid/headline.png) left no-repeat;
+}
+.panelBar .toolBar a.cancleheadline span {
+	background: url(../default/images/grid/cancleheadline.png) left no-repeat;
+}
+
+.grid .gridTbody a.lock {
+	background: url(../default/images/grid/lock.png) left no-repeat;
+	display: block;
+	width: 21px;
+	height: 21px;
+	text-indent: -1000px;
+	overflow: hidden;
+	float: left;
+}
+.grid .gridTbody a.recommend {
+	background: url(../default/images/grid/recommend.png) left no-repeat;
+	display: block;
+	width: 21px;
+	height: 21px;
+	text-indent: -1000px;
+	overflow: hidden;
+	float: left;
+}
+.grid .gridTbody a.headline {
+	background: url(../default/images/grid/headline.png) left no-repeat;
+	display: block;
+	width: 21px;
+	height: 21px;
+	text-indent: -1000px;
+	overflow: hidden;
+	float: left;
+}

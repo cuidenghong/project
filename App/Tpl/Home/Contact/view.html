@@ -1,0 +1,38 @@
+<extend name="./base" />
+
+<block name="title">{:W("ColumnTitle")}_</block>
+
+<block name="main">
+    <div class="banner"></div>
+
+    <div class="wrapper cp_1">
+        <span>联系我们</span>
+        <ul>
+            <column:siblings id="vo" column=":I('columnid')">
+                <li <?php if (I('columnid') == $vo[columnid] ){?> class="active"<?php }?>><column:link column="vo.columnid">{$vo.name}</column:link></li>
+            </column:siblings>
+
+        </ul></div>
+
+    <div class="index_con">
+        <div class="wrapper" >
+            <div class="pro_lb">
+                <div class="pro_list">
+                    <span>
+                        <i>您所在的位置：</i>
+                          {:W("ColumnCrumbs")}
+                    </span>
+                </div>
+                <div class="about_main contact_main">
+                    <br />
+                    <div align="center"><h2>{$data.title} <br /> </h2></div><br /><br />
+                    {$data.content|requestFilterDecode}
+                </div>>
+
+            </div>
+
+        </div>
+    </div>
+
+</block>
+

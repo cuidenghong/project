@@ -1,0 +1,38 @@
+<extend name="./base" />
+
+<block name="title">{:W("ColumnTitle")}_</block>
+
+<block name="main">
+    <div class="banner"></div>
+
+    <div class="wrapper cp_1">
+        <span>竹炭研究</span>
+        <ul>
+            <column:siblings id="vo" column=":I('columnid')">
+                <li <?php if (I('columnid') == $vo[columnid] ){?> class="active"<?php }?>><column:link column="vo.columnid">{$vo.name}</column:link></li>
+            </column:siblings>
+
+        </ul></div>
+
+    <div class="index_con">
+        <div class="wrapper" >
+            <div class="pro_lb new_main_det">
+                <div class="pro_list">
+                    <span>
+                        <i>您所在的位置：</i>
+                          {:W("ColumnCrumbs")}
+                    </span>
+                </div>
+
+                    <h2 ><b>{$data.title}</b></h2>
+                    <div class="new_det">时间：{:W("FormatDate", $data)}</div>
+                    {$data.content|requestFilterDecode}
+                </div>>
+
+            </div>
+
+        </div>
+    </div>
+
+</block>
+

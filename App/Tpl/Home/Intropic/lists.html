@@ -1,0 +1,43 @@
+<extend name="./base" />
+
+<block name="title">{:W("DataTitle")}_</block>
+
+<block name="main">
+
+    <div class="banner"></div>
+    <div class="wrapper cp_1"><span>公司简介</span>
+
+        <ul>
+            <li ><a href="{:W('ColumnLink',2)}">企业介绍</a></li>
+            <li><a href="{:W('ColumnLink',3)}">企业文化  </a></li>
+            <li class="active"><a href="{:W('ColumnLink',6)}">企业证书</a></li>
+
+            <div class="hooer"><a href="{:W('ColumnLink',7)}">企业资质</a>  |   <a href="{:W('ColumnLink',6)}">专利认证</a></div>
+        </ul></div>
+
+    <div class="index_con">
+        <div class="wrapper" >
+
+            <div class="pro_lb"><div class="pro_list">
+
+                <span><i>您所在的位置：</i><{:W("ColumnCrumbs")}</span>
+            </div>
+                <dl>
+                    <volist name=":array_chunk($datas,10)" id="chunk">
+                        <volist name="chunk" id="vo">
+                            <dd><a href="{:W('DataLink', $vo)}"><img src="{$vo.pic.savepath}" ><b>{$vo.title|msubstr=###,0,30}</b></a></dd>
+                            <dd><a href=""></a><span>{:W("FormatDate", $vo)}</span></dd>
+                        </volist>
+                    </volist>
+                </dl>
+                <div class="clear"></div>
+                <div class="page">{$page->show()}</div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+</block>

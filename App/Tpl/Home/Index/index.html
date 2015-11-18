@@ -1,0 +1,79 @@
+<extend name="./base" />
+
+<block name="title">{:W("ColumnTitle")}_</block>
+
+<block name="main">
+<!-- ���� ��ʼ -->
+<div class="slide-main" id="touchMain">
+    <a class="prev" href="javascript:;" stat="prev1001"></a>
+    <div class="slide-box" id="slideContent">
+        <div class="slide" id="bgstylec">
+            <a stat="sslink-3" href="#" >
+
+                <img src="__STATIC__/home/images/1.jpg" />
+            </a>
+        </div>
+        <div class="slide" id="bgstylea">
+            <a stat="sslink-1" href="#">
+                <img src="__STATIC__/home/images/2.jpg" />
+            </a>
+        </div>
+        <div class="slide" id="bgstyleb">
+            <a stat="sslink-2" href="#" >
+                <img src="__STATIC__/home/images/1.jpg" />
+            </a>
+        </div>
+    </div>
+    <a class="next" href="javascript:;" stat="next1002"></a>
+    <div class="item">
+        <a class="cur" stat="item1001" href="javascript:;"></a><a href="javascript:;" stat="item1002"></a><a href="javascript:;" stat="item1003"></a>
+    </div>
+</div>
+<!-- ���� ���� -->
+
+<div class="index_con">
+    <div class="wrapper index_main">
+        <Div class="fl"><img src="__STATIC__/home/images/pic_1.jpg" width="236" height="34" />
+
+            <div class="index_l_b">
+                <data:list id="v" column="8" recommend="1" order='headline DESC' limit="2">
+                    <data:link data="v"><img src="{$v.pic.0.savepath}" width="237" height="55" /></data:link>
+                </data:list>
+            </div>
+            <br />
+            <ul>
+                <data:list id="v" column="8" recommend="1" order='headline DESC' limit="5">
+                    <data:link data="v">{$v.title|msubstr=###,0,20}</data:link>
+                </data:list>
+            </ul>
+        </Div>
+        <div class="fr">
+            <img src="__STATIC__/home/images/pci.jpg" width="121" height="34" />
+            <span class="more"><a href="{:W('ColumnLink',13)}">MORE</a></span>
+            <div class="clear"></div>
+            <data:list id="v" column="14" recommend="1" order='headline DESC' limit="1">
+                <div class="pic_left">
+                    <img src="{$v.pic.savepath}" width="102" height="74" />
+                </div>
+            </data:list>
+            <ul class="index_new_r">
+                <data:list id="v" column="14"  order='headline DESC' limit="5">
+                <li><data:link data="v">{$v.title|msubstr=###,0,20}</data:link><i>{:W("FormatDate", $v)}</i></li>
+                </data:list>
+            </ul>
+            <div class="clear"></div><br />
+            <img src="__STATIC__/home/images/new_1.jpg" width="426" height="58" usemap="#Map" border="0" />
+            <map name="Map" id="Map">
+                <area shape="rect" coords="10,13,132,53" href="{:W('ColumnLink',18)}" />
+                <area shape="rect" coords="154,11,273,53" href="{:W('ColumnLink',8)}" />
+                <area shape="rect" coords="297,8,411,54" href="{:W('ColumnLink',21)}" />
+            </map>
+        </div>
+        <div class="clear"></div>
+
+
+    </div>
+
+
+</div>
+</block>
